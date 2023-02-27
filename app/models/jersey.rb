@@ -1,0 +1,2 @@
+class Jersey < ApplicationRecord
+end
