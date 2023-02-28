@@ -1,6 +1,16 @@
 class JerseysController < ApplicationController
   before_action :edit
 
+  def new
+    @jersey = Jersey.new
+  end
+
+  def create
+    @jersey = Jersey.new(jersey_params)
+    @jersey.save
+    redirect_to jersey_path(@jersey)
+  end
+
   def edit
   end
 
