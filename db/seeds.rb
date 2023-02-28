@@ -83,7 +83,6 @@ while i < 10
         number: numero,
         user: User.find(rand(1..4)),
         state: state,
-        seller_address: "3 rue Chevreul 75011 Paris",
         description: description
       )
       p jersey

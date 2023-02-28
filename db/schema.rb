@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema[7.0].define(version: 2023_02_28_155223) do
+=======
 ActiveRecord::Schema[7.0].define(version: 2023_02_28_094507) do
+>>>>>>> f51c51f0a467b6d217c6dfb19a63c1c739107eb5
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,7 +27,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_094507) do
     t.string "photo"
     t.integer "number"
     t.float "price_per_day"
-    t.string "seller_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -55,6 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_094507) do
     t.string "team"
     t.string "avatar"
     t.string "phone_number"
+    t.string "seller_address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
