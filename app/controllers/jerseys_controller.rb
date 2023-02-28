@@ -1,6 +1,13 @@
 class JerseysController < ApplicationController
   before_action :edit
 
+  def index
+    @jerseys = Jersey.all
+  end
+
+  # def search
+  # end
+
   def edit
   end
 
