@@ -6,6 +6,10 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
   row-gap: 15px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .maillot.card {
