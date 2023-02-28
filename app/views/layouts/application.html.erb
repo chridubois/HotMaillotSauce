@@ -9,10 +9,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <body>
-    <%= render 'layouts/navbar' %>
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body style= "background-image: https://cdn.midjourney.com/c2c29230-3d7d-4604-8c24-d3bf027e2716/grid_0.png">
+    <div class="main container">
+      <%= render 'layouts/navbar' %>
+      <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
   </body>
 </html>
