@@ -1,6 +1,17 @@
 class JerseysController < ApplicationController
   before_action :set_jersey, only: [:show, :edit]
 
+  def new
+    @jersey = Jersey.new
+  end
+
+  def create
+    @jersey = Jersey.new(jersey_params)
+    @jersey.user = current_user
+      @jersey.save
+      redirect_to jersey_path(@jersey)
+  end
+
   def edit
   end
 
@@ -19,6 +30,9 @@ class JerseysController < ApplicationController
   end
 
   private
+  def set_user
+    @user = current_user
+  end
 
   def set_jersey
     @jersey = Jersey.find(params[:id])
