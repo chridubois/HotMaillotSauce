@@ -8,8 +8,11 @@ class JerseysController < ApplicationController
   def create
     @jersey = Jersey.new(jersey_params)
     @jersey.user = current_user
-      @jersey.save
+    if @jersey.save
       redirect_to jersey_path(@jersey)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def index
