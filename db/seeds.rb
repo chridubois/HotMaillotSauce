@@ -9,23 +9,46 @@
 require "open-uri"
 require "nokogiri"
 
+# User seeds
+christophe = User.create(
+  email: "idategto11@gmail.com",
+  password: "password"
+)
+ilyes = User.create(
+  email: "ilyes.messaoudene13013@gmail.com",
+  password: "password"
+)
+candice = User.create(
+  email: "candince.fays@ymail.com",
+  password: "password"
+)
+charlotte = User.create(
+  email: "charlottebene@gmail.com",
+  password: "password"
+)
+
+p User.all
+
+
+# Jersey seeds
+
 i = 1
 
-while i < 2
+while i < 50
 
   url = "https://www.vintagefootballarea.com/collections/tous-les-maillots?page=#{i}"
 
   html_file = URI.open(url).read
   html_doc = Nokogiri::HTML.parse(html_file)
 
-  exclude = false
   # p html_doc.search(".rimage__image").first.attributes["data-src"].value
 
   html_doc.search(".product-block").each do |element|
+    exclude = false
     # description = element.search(".title").text.strip
     year = element.search(".title").text.strip.split('-').first.strip
     team = element.search(".title").text.strip.split('-')[1].split('(').first.strip
-    photo = element.search(".rimage__image").first.attributes["data-src"].value
+    photo = "https:#{element.search(".rimage__image").first.attributes["data-src"].value.gsub('{width}', '1080')}"
     price_per_day = element.search(".price").text.strip.gsub('€', '')
 
     split_element = element.search(".title").text.strip.split('-')
@@ -40,21 +63,24 @@ while i < 2
     else
       size = element.search(".title").text.strip.split('-')[1].split('(')[1].gsub(')', '').strip
     end
-    jersey = Jersey.create!(
-      year: year,
-      team: team,
-      photo: photo,
-      price_per_day: price_per_day,
-      size: size,
-      player: player,
-      number: numero,
-      user: User.find(1),
-      state: "new",
-      seller_address: "3 rue Chevreul 75011 Paris"
-    )
 
-    p [year, team, photo, price_per_day, size, player, numero]
-    p "---------------"
+    if exclude == false
+
+      jersey = Jersey.create(
+        year: year,
+        team: team,
+        photo: photo,
+        price_per_day: price_per_day,
+        size: size,
+        player: player,
+        number: numero,
+        user: User.find(rand(1..4)),
+        state: "new",
+        seller_address: "3 rue Chevreul 75011 Paris"
+      )
+      p jersey
+      p "---------------"
+    end
   end
   i += 1
 end
