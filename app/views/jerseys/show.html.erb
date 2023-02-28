@@ -1,0 +1,40 @@
+<div class="container container-maillot">
+  <div class="container-show-left">
+    <h1 data-hook="product-title" class="_2qrJF">Maillot <%= "#{@jersey.team} - #{@jersey.year} " %></h1>
+    <img class="_1jx3x _24O7B er7Ub" data-hook="product-image" src="<%= @jersey.photo %>" alt="Maillot Brésil 1970 signé par Pelé" aria-hidden="false" style="width: 488.764px; height: 500px;">
+    <div class="_3bNb3 fggS- cell">
+      <div data-hook="product-prices-wrapper" class="_2dNDU">
+        <div data-hook="product-price" class="_2POY8">
+          <div class="_26qxh">
+            <span>Prix</span>
+            <span><%= @jersey.price_per_day %> €/jour</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>Réservation</p>
+    <div>
+      <label>
+        <span data-hook="number-input-spinner-title" class="_3N3nl">
+          Date de réservation
+        </span>
+      </label>
+      <div class="_2uERl" data-hook="number-input-spinner-container">
+        <input type="number" pattern="[0-9]*" data-hook="number-input-spinner-input" aria-label="Quantité" max="99999" date="Day/Month" value="Day/Month">
+        <div data-hook="number-input-spinner-arrows-container" class="bKBvP" aria-hidden="true">
+          <span data-hook="number-input-spinner-up-arrow" class="_11lkb">
+          </span>
+          <span data-hook="number-input-spinner-down-arrow" class="_3Bjyb _4Irna">
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-show-right">
+    <p style="float:right">
+      <p><%= @jersey.description %> </p>
+    </div>
+  </div>
+  <span style="font-size:11px;">Chaque exemplaire est unique, et l'article que vous recevez peut différer légèrement de celui illustré :&nbsp;<span style="font-weight:bold;"><a href="https://www.lecollectionneursportif.fr/presentation-societe" target="_self" data-anchor="dataItem-kty5620v">+ infos</a></span></span>
+  <img src="./monimage.jpg">

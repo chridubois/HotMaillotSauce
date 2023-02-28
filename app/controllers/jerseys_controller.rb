@@ -1,7 +1,31 @@
 class JerseysController < ApplicationController
-  before_action :edit
+  before_action :set_jersey, only: [:show, :edit]
+
+  def new
+    @jersey = Jersey.new
+  end
+
+  def create
+    @jersey = Jersey.new(jersey_params)
+    @jersey.user = current_user
+    if @jersey.save
+      redirect_to jersey_path(@jersey)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def index
+    @jerseys = Jersey.all
+  end
+
+  # def search
+  # end
 
   def edit
+  end
+
+  def show
   end
 
   def update
@@ -22,7 +46,6 @@ class JerseysController < ApplicationController
   end
 
   def jersey_params
-    params.require('jersey').permit(:team, :player, :year, :state, :description, :photo, :number, :price_per_day, :user,
-      :seller_address)
+    params.require('jersey').permit(:team, :player, :year, :state, :description, :photo, :number, :price_per_day, :user, :size)
   end
 end
