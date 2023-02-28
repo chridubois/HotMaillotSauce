@@ -1,7 +1,10 @@
 class JerseysController < ApplicationController
-  before_action :edit
+  before_action :set_jersey, only: [:show, :edit]
 
   def edit
+  end
+
+  def show
   end
 
   def update
