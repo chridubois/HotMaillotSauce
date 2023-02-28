@@ -4,6 +4,10 @@ class JerseysController < ApplicationController
   def edit
   end
 
+  def show
+    
+  end
+
   def update
     @jersey = Jersey.find(params[:id])
     @jersey.update(params[:jersey])
