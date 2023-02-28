@@ -1,7 +1,21 @@
 class JerseysController < ApplicationController
-  before_action :edit
+  before_action :set_jersey, only: [:show, :edit]
+
+  def new
+    @jersey = Jersey.new
+  end
+
+  def create
+    @jersey = Jersey.new(jersey_params)
+    @jersey.user = current_user
+      @jersey.save
+      redirect_to jersey_path(@jersey)
+  end
 
   def edit
+  end
+
+  def show
   end
 
   def update
