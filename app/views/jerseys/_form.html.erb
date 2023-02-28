@@ -1,13 +1,15 @@
 <%= simple_form_for(@jersey) do |f| %>
-  <%= f.input :team %>
+  <%= f.input :team, required: true %>
   <%= f.input :player %>
   <%= f.input :number %>
-  <%= f.input :year %>
-  <%= f.input :size %>   <%# validations modele !!! %>
-  <%= f.input :state %>  <%# validations modele !!! %>
+  <%= f.input :year, required: true, collection: 1945..2023 %>
+  <%= f.input :size, required: true, collection: ['XS', 'S', 'M', 'L', 'XL', 'XXL'] %>
+  <%= f.input :state, required: true, collection: ['Full of swet', 'Good enough', 'Smell victory'] %>
   <%= f.input :description %>
-  <%= f.input :photo %>
-  <%= f.input :price_per_day %>
-  <%= f.input :seller_address %>
+  <%= f.input :photo, required: true, placeholder: 'Lien de ta photo' %>
+  <%# <%= f.file :photo, required: true %>
+  <%# # // quand fonction ok %>
+  <%= f.input :price_per_day, required: true %>
+  <%= f.input :seller_address, required: true %>  <%# à relier à un user plutôt? %>
   <%= f.submit %>
 <% end %>
