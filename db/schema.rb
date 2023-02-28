@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_155223) do
-=======
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_094507) do
->>>>>>> f51c51f0a467b6d217c6dfb19a63c1c739107eb5
+ActiveRecord::Schema[7.0].define(version: 2023_02_28_154353) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_094507) do
     t.bigint "jersey_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "total_amount"
     t.index ["jersey_id"], name: "index_orders_on_jersey_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
