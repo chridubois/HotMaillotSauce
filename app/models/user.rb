@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :jerseys
   has_many :orders
+
+  validates :email, :firstname, :lastname, :password, :team, :avatar, :phone_number, presence: true
 end
