@@ -34,7 +34,7 @@ p User.all
 
 i = 1
 
-while i < 50
+while i < 10
 
   url = "https://www.vintagefootballarea.com/collections/tous-les-maillots?page=#{i}"
 
@@ -64,6 +64,13 @@ while i < 50
       size = element.search(".title").text.strip.split('-')[1].split('(')[1].gsub(')', '').strip
     end
 
+    state = ["Neuf", "Neuf sans étiquette", "Très bon état", "Passable", "Médiocre", "Plein de sueur"].sample
+    description = "Ce maillot de l’équipe de #{team} est incroyable. Il a été porté #{player ? "par #{player}" : ''} lors de la finale de
+    Champions League durant la saison #{year}.
+    Ce maillot est #{state}.
+    Ce maillot a été signé #{player ? "par #{player}" : ''}, lui même, lors de son dernier match avec la #{team}.
+    Ce maillot est disponible en taille #{size}"
+
     if exclude == false
 
       jersey = Jersey.create(
@@ -75,8 +82,9 @@ while i < 50
         player: player,
         number: numero,
         user: User.find(rand(1..4)),
-        state: "new",
-        seller_address: "3 rue Chevreul 75011 Paris"
+        state: state,
+        seller_address: "3 rue Chevreul 75011 Paris",
+        description: description
       )
       p jersey
       p "---------------"
