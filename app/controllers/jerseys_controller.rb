@@ -1,5 +1,6 @@
 class JerseysController < ApplicationController
-  before_action :set_jersey, only: [:show, :edit]
+  before_action :set_jersey, only: %i[show edit update]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def new
     @jersey = Jersey.new
@@ -16,7 +17,11 @@ class JerseysController < ApplicationController
   end
 
   def index
-    @jerseys = Jersey.all
+    @jerseys = Jersey.order(id: :desc)
+  end
+
+  def shop
+    @jerseys = Jersey.where(user_id: current_user.id)
   end
 
   # def search
@@ -31,6 +36,7 @@ class JerseysController < ApplicationController
   def update
     @jersey = Jersey.find(params[:id])
     @jersey.update(params[:jersey])
+    redirect_to shop_path
   end
 
   def destroy
