@@ -1,19 +1,25 @@
 
-<div class="container mt-3 ">
+<div class="container mt-3"  >
+
   <h1>HOT MAILLOT SAUCE</h1>
 
-    <div class="maillot-card">
-        <img src= "https://cdn.midjourney.com/b7d82fab-6cc7-4e6d-81e7-13558f628fd5/grid_0.png" width="320" height=518.095 />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Hot maillot</h2>
-          <p>Short description here!</p>
-        </div>
-          <h2 class="maillot-card-price">£99.99 / Day</h2>
-          <img src="" class="avatar-seller" />
-      </div>
-    </div>
 
+  <div class="container card">
 
+      <% @jerseys[0..5].each do |jersey| %>
+        <div class="maillot card">
 
+            <div class="card-maillot-infos">
+              <div>
+                  <h2><%= jersey.team %></h2>
+                  <p><%= jersey.description %> </p>
+              </div>
+                <h2 class="maillot-card-price"> <%= jersey.price_per_day %>$ /Day</h2>
+                <img src="<%= jersey.photo %>"class="photo maillot" widht="203" height="309"/>
+            </div>
+                <%= link_to jersey.user, jersey_path(jersey) %>
+         </div>
+      <% end %>
+
+  </div>
 </div>

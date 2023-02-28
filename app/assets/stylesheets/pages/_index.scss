@@ -1,2 +1,31 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.maillot.card {
+border: solid;
+background-color: #222;
+border-radius: 15px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+color: #fff;
+padding: 20px;
+
+}
+
+.photo.maillot{
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.card.description {
+  font-size: 16px;
+  margin: 0;
+}

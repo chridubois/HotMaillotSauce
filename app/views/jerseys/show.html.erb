@@ -13,15 +13,27 @@
         </div>
       </div>
     </div>
-    <p>Réservation</p>
+    <p><input type="button" value="Réserver le maillot">
+      <form action="Votre maillot est réservé"></form>
     <div>
       <label>
         <span data-hook="number-input-spinner-title" class="_3N3nl">
           Date de réservation
         </span>
+
       </label>
       <div class="_2uERl" data-hook="number-input-spinner-container">
-        <input type="number" pattern="[0-9]*" data-hook="number-input-spinner-input" aria-label="Quantité" max="99999" date="Day/Month" value="Day/Month">
+        <label for="start">Start date:</label>
+
+      <input type="date" id="start" name="trip-start"
+       value="2023-02-01"
+       min="2023-03-01" max="2999-12-31">
+       <input type="date" id="end" name="trip-end"
+       value="2023-02-01"
+       min="2023-03-01" max="2999-12-31">
+    
+
+
         <div data-hook="number-input-spinner-arrows-container" class="bKBvP" aria-hidden="true">
           <span data-hook="number-input-spinner-up-arrow" class="_11lkb">
           </span>
@@ -36,5 +48,3 @@
       <p><%= @jersey.description %> </p>
     </div>
   </div>
-  <span style="font-size:11px;">Chaque exemplaire est unique, et l'article que vous recevez peut différer légèrement de celui illustré :&nbsp;<span style="font-weight:bold;"><a href="https://www.lecollectionneursportif.fr/presentation-societe" target="_self" data-anchor="dataItem-kty5620v">+ infos</a></span></span>
-  <img src="./monimage.jpg">
