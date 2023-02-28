@@ -12,6 +12,13 @@ class JerseysController < ApplicationController
       redirect_to jersey_path(@jersey)
   end
 
+  def index
+    @jerseys = Jersey.all
+  end
+
+  # def search
+  # end
+
   def edit
   end
 
