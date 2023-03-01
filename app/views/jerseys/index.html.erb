@@ -4,7 +4,7 @@
 
 <div class="container mt-3"  >
 
-  <h1>ALL OUR JERSEYS</h1>
+  <h1>ALL OUR JERSEYS ( <%= @jerseys.count %> )</h1>
 
 
     <div class="search">
@@ -15,22 +15,9 @@
     </div>
 
     <div class="container card">
-        <% @jerseys[0..5].each do |jersey| %>
+        <% @jerseys[0..20].each do |jersey| %>
           <%= link_to jersey_path(jersey) do %>
-            <div class="banner image">
-
-                <div id="jerseyyear"> <h3><%= jersey.team %>
-                </h3><%= jersey.year %></div>
-
-                <img src="<%= jersey.photo %>"class="photo maillot" widht="203" height="309"/>
-                  <div id="footcard">
-                    <p> <%= jersey.price_per_day %>$ /Day</p>
-                    <p><%= jersey.number %>
-                      <p>Size :<%= jersey.size %></p>
-                      <p><%= jersey.description%></p>
-                    </p>
-                  </div>
-            </div>
+          <%= render 'jerseys/card', jersey: jersey %>
           <% end %>
         <% end %>
     </div>
