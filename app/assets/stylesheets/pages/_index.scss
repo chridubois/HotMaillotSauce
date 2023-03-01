@@ -1,40 +1,132 @@
 // Import page-specific CSS files here.
 @import "home";
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 
-
-.container.card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 10px;
-  row-gap: 15px;
-  background-color: #301934;
-  padding: 0px;
+.container {
 
   a {
     text-decoration: none;
   }
 }
 
-.maillot.card {
-  border: solid;
-  border-color: #35ee25;
-  background-color: #222;
-  border-radius: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  color: #ffffff;
-  padding: 20px;
 
+.banner.image {
+  border-radius: 40px 10px;
+  background-color: #431B54;
+  box-shadow: 0 2px 4px #34f32e;
+  color: #1E2A30;
+  padding: 25px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
+  border: 3px solid;
+  border-color: #34f32e;
+  padding: 38px;
+  filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+  display: flex;
+  flex-direction: column;
 }
 
 .photo.maillot{
-  display: block;
-  margin: 0 auto 10px;
-  max-width: 100%;
   border-radius: 15px;
+  display: block;
+  border: 2px solid;
+  border-color: #34f32e;
+  padding: 15 px;
+  margin: 0 auto 10px;
+  box-shadow: inset 35px 20px rgb(0, 0, 0);
+  max-width: 100%;
 }
 
-.card.description {
-  font-size: 16px;
-  margin: 0;
+
+.container.card {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
+  border-radius: 12px;
+  padding: 38px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 15px;
+  background-color: none;
+  padding: 0px;
+}
+
+
+h1{
+  font-size: 90px;
+  font-family: 'Anton', sans-serif;
+  background: radial-gradient(#34f32e ,#ffffff );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+
+#jerseyyear{
+  font-family: 'Anton', sans-serif;
+  color: #34f32e;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+h3 {
+  font-family: 'Anton', sans-serif;
+  color: #34f32e;
+  font-size: 35px;
+
+
+}
+
+
+p {
+  background: radial-gradient(#34f32e ,#ffffff );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Anton', sans-serif;
+  font-size: 25px;
+}
+
+#footcard{
+ display: flex;
+ justify-content: space-between;
+}
+
+.button-wrapper{
+  margin-top: 18px;
+}
+
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.btn + .btn {
+  margin-left: 10px;
+}
+
+.outline {
+  background: transparent;
+  color: rgba(0, 212, 255, 0.9);
+  border: 1px solid rgba(0, 212, 255, 0.6);
+  transition: all .3s ease;
+
+}
+
+.outline:hover{
+  transform: scale(1.125);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transition: all .3s ease;
 }

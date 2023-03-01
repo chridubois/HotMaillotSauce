@@ -13,8 +13,10 @@
 
 
 .navbar {
-  background-color: #35ee25;
-  
+  background-color: #34f32e ;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 40px 10px;
+
 
   .navbar-nav {
     color: white !important;
@@ -22,5 +24,7 @@
 }
 
 body{
-  background-image: url(https://cdn.midjourney.com/c2c29230-3d7d-4604-8c24-d3bf027e2716/grid_0.png);
+  background-image: url(https://cdn.midjourney.com/a02b2689-f6e0-4578-8303-4ac4ed66ca5e/grid_0.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

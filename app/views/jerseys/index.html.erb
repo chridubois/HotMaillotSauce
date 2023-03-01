@@ -1,24 +1,38 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Unbounded:wght@900&display=swap');
+</style>
 
 <div class="container mt-3"  >
-  <h1>ALL OUR JERSEYS ( <%= @jerseys.count %> )</h1>
-  <form class="d-flex p-3" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search for a team" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  <div class="container card text-center">
-    <% @jerseys[0..20].each do |jersey| %>
-      <%= link_to jersey_path(jersey) do %>
-        <div class="maillot card">
-          <div class="card-maillot-infos">
-            <div>
-              <h2><%= jersey.team %></h2>
-              <p><%= jersey.description %> </p>
+
+  <h1>ALL OUR JERSEYS</h1>
+
+
+    <div class="search">
+      <form class="d-flex p-3" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search for a team" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="container card">
+        <% @jerseys[0..5].each do |jersey| %>
+          <%= link_to jersey_path(jersey) do %>
+            <div class="banner image">
+
+                <div id="jerseyyear"> <h3><%= jersey.team %>
+                </h3><%= jersey.year %></div>
+
+                <img src="<%= jersey.photo %>"class="photo maillot" widht="203" height="309"/>
+                  <div id="footcard">
+                    <p> <%= jersey.price_per_day %>$ /Day</p>
+                    <p><%= jersey.number %>
+                      <p>Size :<%= jersey.size %></p>
+                      <p><%= jersey.description%></p>
+                    </p>
+                  </div>
             </div>
-            <img src="<%= jersey.photo %>"class="photo maillot" widht="203" height="309"/>
-            <h2 class="maillot-card-price"> <%= jersey.price_per_day %>$ /Day</h2>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+          <% end %>
+        <% end %>
+    </div>
+
 </div>
