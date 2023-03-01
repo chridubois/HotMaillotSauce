@@ -1,11 +1,15 @@
 // Import page-specific CSS files here.
 @import "home";
 
+
+
 .container.card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
   row-gap: 15px;
+  background-color: #301934;
+  padding: 0px;
 
   a {
     text-decoration: none;
@@ -13,20 +17,21 @@
 }
 
 .maillot.card {
-border: solid;
-background-color: #222;
-border-radius: 15px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-color: #fff;
-padding: 20px;
+  border: solid;
+  border-color: #35ee25;
+  background-color: #222;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  padding: 20px;
 
 }
 
 .photo.maillot{
-    display: block;
-    margin: 0 auto 10px;
-    max-width: 100%;
-    border-radius: 15px;
+  display: block;
+  margin: 0 auto 10px;
+  max-width: 100%;
+  border-radius: 15px;
 }
 
 .card.description {
