@@ -1,0 +1,32 @@
+// Import page-specific CSS files here.
+@import "home";
+
+// background-color vert fluo: #35ee25;
+// autre vert #1cc87c
+.form {
+  color: #1cc87c;
+  font-weight: bold;
+  margin-top: 8%;
+  padding: 4%;
+  border: 3px solid #34F32E;
+  border-radius: 16px;
+  background-color: #431B54;
+  .title{
+    margin-bottom: 4%;
+    color: #34F32E;
+    text-align: center;
+  }
+  input[type="submit"].btn-submit {
+    background-color: #34F32E;
+    margin-top: 32px;
+    padding: 8px;
+    border-radius: 12px;
+    color: purple;
+    font-weight: bold;
+  }
+}
+
+.partial-btn-submit{
+  display: flex;
+  justify-content: center;
+}
