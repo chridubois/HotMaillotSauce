@@ -11,6 +11,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/_jerseys-new";
+@import "pages/show";
 
 
 .navbar {
@@ -24,4 +25,5 @@
 
 body{
   background-image: url(https://cdn.midjourney.com/c2c29230-3d7d-4604-8c24-d3bf027e2716/grid_0.png);
+  color: white;
 }
