@@ -12,29 +12,54 @@ require "nokogiri"
 # User seeds
 christophe = User.create(
   email: "idategto11@gmail.com",
-  password: "password"
+  password: "password",
+  firstname: "Christophe",
+  lastname: "Dubois",
+  team: "Marseille",
+  avatar: "https://picsum.photos/200/300",
+  phone_number: "0684889073",
+  seller_address: "75 rue Sainte Cécile, 13005, Marseille"
 )
 ilyes = User.create(
   email: "ilyes.messaoudene13013@gmail.com",
-  password: "password"
+  password: "password",
+  firstname: "Ilyes",
+  lastname: "Messaoudene",
+  team: "PSG",
+  avatar: "https://picsum.photos/200/300",
+  phone_number: "0684889073",
+  seller_address: "75 rue Sainte Cécile, 13005, Marseille"
 )
 candice = User.create(
   email: "candince.fays@ymail.com",
-  password: "password"
+  password: "password",
+  firstname: "Candice",
+  lastname: "Fays",
+  team: "Saint Etienne",
+  avatar: "https://picsum.photos/200/300",
+  phone_number: "0684889073",
+  seller_address: "75 rue Sainte Cécile, 13005, Marseille"
 )
 charlotte = User.create(
   email: "charlottebene@gmail.com",
-  password: "password"
+  password: "password",
+  firstname: "Charlotte",
+  lastname: "Benedetti",
+  team: "Barcelone",
+  avatar: "https://picsum.photos/200/300",
+  phone_number: "0684889073",
+  seller_address: "75 rue Sainte Cécile, 13005, Marseille"
 )
 
 p User.all
 
+user_count = User.all.count
 
 # Jersey seeds
 
 i = 1
 
-while i < 10
+while i < 100
 
   url = "https://www.vintagefootballarea.com/collections/tous-les-maillots?page=#{i}"
 
@@ -45,23 +70,26 @@ while i < 10
 
   html_doc.search(".product-block").each do |element|
     exclude = false
-    # description = element.search(".title").text.strip
-    year = element.search(".title").text.strip.split('-').first.strip
-    team = element.search(".title").text.strip.split('-')[1].split('(').first.strip
-    photo = "https:#{element.search(".rimage__image").first.attributes["data-src"].value.gsub('{width}', '1080')}"
-    price_per_day = element.search(".price").text.strip.gsub('€', '')
+    split_element = element.search(".title").text.strip.split(' - ')
+    year = split_element.first.strip
+    next if split_element[1].nil?
 
-    split_element = element.search(".title").text.strip.split('-')
+    team = split_element[1].split('(').first.strip
+    photo = "https:#{element.search('.rimage__image').first.attributes['data-src'].value.gsub('{width}', '1080')}"
+    price_per_day = element.search(".price").text.strip.gsub(',', '.').gsub('€', '')
+
     if split_element[2]
-      size = element.search(".title").text.strip.split('-')[2].split('(')[1].gsub(')', '').strip
-      if element.search(".title").text.strip.split('-')[2].split('(')[0].split('#')[1].nil?
+      size = split_element[2].split('(')[1].gsub(')', '').strip
+      if split_element[2].split('(')[0].split('#')[1].nil?
         exclude = true
       else
-        player = element.search(".title").text.strip.split('-')[2].split('(')[0].split('#')[0].strip
-        numero = element.search(".title").text.strip.split('-')[2].split('(')[0].split('#')[1].strip
+        player = split_element[2].split('(')[0].split('#')[0].strip
+        number = split_element[2].split('(')[0].split('#')[1].strip
       end
     else
-      size = element.search(".title").text.strip.split('-')[1].split('(')[1].gsub(')', '').strip
+      next if split_element[1].split('(')[1].nil?
+
+      size = split_element[1].split('(')[1].gsub(')', '').strip
     end
 
     state = ["Neuf", "Neuf sans étiquette", "Très bon état", "Passable", "Médiocre", "Plein de sueur"].sample
@@ -71,23 +99,22 @@ while i < 10
     Ce maillot a été signé #{player ? "par #{player}" : ''}, lui même, lors de son dernier match avec la #{team}.
     Ce maillot est disponible en taille #{size}"
 
-    if exclude == false
+    next if exclude == true
 
-      jersey = Jersey.create(
-        year: year,
-        team: team,
-        photo: photo,
-        price_per_day: price_per_day,
-        size: size,
-        player: player,
-        number: numero,
-        user: User.find(rand(1..4)),
-        state: state,
-        description: description
-      )
-      p jersey
-      p "---------------"
-    end
+    jersey = Jersey.create(
+      year:,
+      team:,
+      photo:,
+      price_per_day:,
+      size:,
+      player:,
+      number:,
+      user: User.find(rand(1..user_count)),
+      state:,
+      description:
+    )
+    p jersey
+    p "---------------"
   end
   i += 1
 end
