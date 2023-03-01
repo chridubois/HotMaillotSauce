@@ -8,17 +8,17 @@
   font-weight: bold;
   margin-top: 8%;
   padding: 4%;
-  border: 3px solid #35ee25;
+  border: 3px solid #34F32E;
   border-radius: 16px;
-  background-color: rgb(51, 0, 51);
+  background-color: #431B54;
   .title{
     margin-bottom: 4%;
-    color: #35ee25;
+    color: #34F32E;
     text-align: center;
   }
   input[type="submit"].btn-submit {
-    background-color: #35ee25;
-    margin-top: 12px;
+    background-color: #34F32E;
+    margin-top: 32px;
     padding: 8px;
     border-radius: 12px;
     color: purple;
@@ -29,5 +29,4 @@
 .partial-btn-submit{
   display: flex;
   justify-content: center;
-
 }
