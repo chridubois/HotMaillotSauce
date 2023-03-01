@@ -9,6 +9,30 @@ export default class extends Controller {
     console.log("Hello, Stimulus!", this.element)
   }
 
+  end_date_refresher() {
+    const begin_date = new Date(this.begin_dateTarget.value)
+    const tomorrow = new Date()
+    let new_date = ""
+    tomorrow.setDate(begin_date.getDate()+1)
+    console.log(tomorrow)
+    if ((tomorrow.getMonth()+1) < 10) {
+      if (tomorrow.getDate() < 10) {
+        new_date = `${tomorrow.getFullYear()}-0${tomorrow.getMonth()+1}-0${tomorrow.getDate()}`
+      } else {
+        new_date = `${tomorrow.getFullYear()}-0${tomorrow.getMonth()+1}-${tomorrow.getDate()}`
+      }
+    } else {
+      if (tomorrow.getDate() < 10) {
+        new_date = `${tomorrow.getFullYear()}-${tomorrow.getMonth()+1}-0${tomorrow.getDate()}`
+      } else {
+        new_date = `${tomorrow.getFullYear()}-${tomorrow.getMonth()+1}-${tomorrow.getDate()}`
+      }
+    }
+    console.log(new_date)
+    this.end_dateTarget.min = new_date
+    this.end_dateTarget.value = new_date
+  }
+
   total_amount_refresher() {
     const begin_date = new Date(this.begin_dateTarget.value)
     const end_date = new Date(this.end_dateTarget.value)

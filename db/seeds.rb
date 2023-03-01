@@ -31,7 +31,7 @@ ilyes = User.create(
   seller_address: "75 rue Sainte Cécile, 13005, Marseille"
 )
 candice = User.create(
-  email: "candince.fays@ymail.com",
+  email: "candice.fays@ymail.com",
   password: "password",
   firstname: "Candice",
   lastname: "Fays",
