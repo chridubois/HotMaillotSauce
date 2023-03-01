@@ -4,15 +4,13 @@
 .jersey-image img {
   width: 550px;
   border-radius: 15px;
-  border: solid;
+  border: solid 5px;
   border-color: #35ee25;
 }
 
 .booking {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 550px;
+  margin-left: 100px;
 
 
   .booking-card {
@@ -26,6 +24,7 @@
     width: 400px;
     height: 400px;
     position: relative;
+    margin-top: 50px;
   }
   .total-price-bloc {
     position: absolute;
@@ -44,6 +43,10 @@
     box-shadow: 0 2px 4px;
     padding: 10px;
   }
+}
+
+.jersey-card {
+  margin-left: 125px;
 }
 
 .jersey-infos {
@@ -70,6 +73,9 @@
   box-shadow: 0 2px 4px;
   color: #ffffff;
   padding: 20px;
+  width: 400px;
+  font-size: 12px;
+  margin-top: 70px;
 }
 .stars {
   color: #34f32e;
