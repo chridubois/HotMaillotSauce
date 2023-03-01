@@ -30,48 +30,63 @@
         </div>
       </div>
     </div>
-    <div class="booking">
-      <div class="booking-card">
-        <div class="title d-flex justify-content-center">
-          <h2>Booking</h2>
-        </div>
-        <div class="price-bloc d-flex justify-content-evenly mt-3">
-          <div class="price">
-            <%= "#{@jersey.price_per_day}$ / day" %>
+    <div class="right-part">
+      <div class="booking">
+        <div class="booking-card" data-controller="price-updater">
+          <div class="title d-flex justify-content-center">
+            <h2>Booking</h2>
           </div>
-          <div class="stars">
-            <i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i> (5)
-          </div>
-        </div>
-        <div class="booking-form">
-          <form method="POST" action="#">
-            <div class="date-bloc d-flex justify-content-center mt-5">
-              <div class="begin-date">
-                <input type="date" id="begin-date" name="begin-date" value="2023-02-01" min="2023-03-01" max="2999-12-31">
-              </div>
-              <div class="end-date">
-                <input type="date" id="end-date" name="end-date" value="2023-02-01" min="2023-03-01" max="2999-12-31">
-              </div>
+          <div class="price-bloc d-flex justify-content-evenly mt-3">
+            <div class="price" data-target="price-updater.price_per_day">
+              <%= "#{@jersey.price_per_day}$ / day" %>
             </div>
-            <div class="booking-button d-flex justify-content-center">
-              <input type="button" value="Book Jersey" class="btn btn-outline-success px-5">
+            <div class="stars">
+              <i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i> (5)
             </div>
-          </form>
+          </div>
+          <div class="booking-form">
+            <form method="POST" action="#">
+              <div class="date-bloc d-flex justify-content-center mt-5">
+                <div class="begin-date">
+                  <input type="date"
+                  id="begin-date"
+                  name="begin-date"
+                  value="2023-03-01"
+                  min="2023-03-01"
+                  max="2999-12-31"
+                  data-target="price-updater.begin_date">
+                </div>
+                <div class="end-date">
+                  <input type="date"
+                  id="end-date"
+                  name="end-date"
+                  value="2023-03-01"
+                  min="2023-03-01"
+                  max="2999-12-31"
+                  data-target="price-updater.end_date"
+                  data-action="change->price-updater#total_amount_refresher">
+                </div>
+              </div>
+              <div class="booking-button d-flex justify-content-center">
+                <input type="button" value="Book Jersey" class="btn btn-outline-success px-5">
+              </div>
+            </form>
+          </div>
+          <div class="total-price-bloc d-flex justify-content-between p-3">
+            <div class="total-label">
+              Total
+            </div>
+            <div class="total-value" data-target="price-updater.total_amount">
+              150$
+            </div>
+          </div>
         </div>
-        <div class="total-price-bloc d-flex justify-content-between p-3">
-          <div class="total-label">
-            Total
-          </div>
-          <div class="total-value">
-            150$
-          </div>
+        <div class="description text-center">
+          <h2>Jersey's story</h2>
+          <%= "#{@jersey.description}" %>
         </div>
       </div>
     </div>
 
-  </div>
-  <div class="description mx-5 text-center">
-    <h2>Jersey's story</h2>
-    <%= "#{@jersey.description}" %>
   </div>
 </div>
