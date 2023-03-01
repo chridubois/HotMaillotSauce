@@ -1,50 +1,76 @@
-<div class="container container-maillot">
-  <div class="container-show-left">
-    <h1 data-hook="product-title" class="_2qrJF">Maillot <%= "#{@jersey.team} - #{@jersey.year} " %></h1>
-    <img class="_1jx3x _24O7B er7Ub" data-hook="product-image" src="<%= @jersey.photo %>" alt="Maillot Brésil 1970 signé par Pelé" aria-hidden="false" style="width: 488.764px; height: 500px;">
-    <div class="_3bNb3 fggS- cell">
-      <div data-hook="product-prices-wrapper" class="_2dNDU">
-        <div data-hook="product-price" class="_2POY8">
-          <div class="_26qxh">
-            <span>Prix</span>
-            <span><%= @jersey.price_per_day %> €/jour</span>
-
+<div class="container">
+  <div class="container show d-flex justify-content-center p-5">
+    <div class="jersey-card">
+      <div class="title-bloc d-flex justify-content-center">
+        <h1>Maillot <%= "#{@jersey.team} - #{@jersey.year} " %></h1>
+      </div>
+      <div class="jersey-image p-3">
+        <img src="<%= @jersey.photo %>">
+      </div>
+      <div class="jersey-infos">
+        <div class="infos-item year">
+          <%= "#{@jersey.year}" %>
+        </div>
+        <div class="infos-item team">
+          <%= "#{@jersey.team}" %>
+        </div>
+        <% if @jersey.player %>
+          <div class="infos-item player">
+            <%= "#{@jersey.player}" %>
+          </div>
+          <div class="infos-item number">
+            <%= "#{@jersey.number}" %>
+          </div>
+        <% end %>
+        <div class="infos-item size">
+          <%= "#{@jersey.size}" %>
+        </div>
+        <div class="infos-item state">
+          <%= "#{@jersey.state}" %>
+        </div>
+      </div>
+    </div>
+    <div class="booking">
+      <div class="booking-card">
+        <div class="title d-flex justify-content-center">
+          <h2>Booking</h2>
+        </div>
+        <div class="price-bloc d-flex justify-content-evenly mt-3">
+          <div class="price">
+            <%= "#{@jersey.price_per_day}$ / day" %>
+          </div>
+          <div class="stars">
+            <i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i> (5)
+          </div>
+        </div>
+        <div class="booking-form">
+          <form method="POST" action="#">
+            <div class="date-bloc d-flex justify-content-center mt-5">
+              <div class="begin-date">
+                <input type="date" id="begin-date" name="begin-date" value="2023-02-01" min="2023-03-01" max="2999-12-31">
+              </div>
+              <div class="end-date">
+                <input type="date" id="end-date" name="end-date" value="2023-02-01" min="2023-03-01" max="2999-12-31">
+              </div>
+            </div>
+            <div class="booking-button d-flex justify-content-center">
+              <input type="button" value="Book Jersey" class="btn btn-outline-success px-5">
+            </div>
+          </form>
+        </div>
+        <div class="total-price-bloc d-flex justify-content-between p-3">
+          <div class="total-label">
+            Total
+          </div>
+          <div class="total-value">
+            150$
           </div>
         </div>
       </div>
     </div>
-    <p><input type="button" value="Réserver le maillot">
-      <form action="Votre maillot est réservé"></form>
-    <div>
-      <label>
-        <span data-hook="number-input-spinner-title" class="_3N3nl">
-          Date de réservation
-        </span>
-
-      </label>
-      <div class="_2uERl" data-hook="number-input-spinner-container">
-        <label for="start">Start date:</label>
-
-      <input type="date" id="start" name="trip-start"
-       value="2023-02-01"
-       min="2023-03-01" max="2999-12-31">
-       <input type="date" id="end" name="trip-end"
-       value="2023-02-01"
-       min="2023-03-01" max="2999-12-31">
-    
-
-
-        <div data-hook="number-input-spinner-arrows-container" class="bKBvP" aria-hidden="true">
-          <span data-hook="number-input-spinner-up-arrow" class="_11lkb">
-          </span>
-          <span data-hook="number-input-spinner-down-arrow" class="_3Bjyb _4Irna">
-          </span>
-        </div>
-      </div>
-    </div>
   </div>
-  <div class="container-show-right">
-    <p style="float:right">
-      <p><%= @jersey.description %> </p>
-    </div>
+  <div class="description mx-5 text-center">
+    <h2>Jersey's story</h2>
+    <%= "#{@jersey.description}" %>
   </div>
+</div>

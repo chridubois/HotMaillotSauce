@@ -1,0 +1,76 @@
+// Import page-specific CSS files here.
+@import "home";
+
+.jersey-image img {
+  width: 550px;
+  border-radius: 15px;
+  border: solid;
+  border-color: #35ee25;
+}
+
+.booking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 550px;
+
+
+  .booking-card {
+    border: solid;
+    border-color: #34f32e;
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px;
+    color: #ffffff;
+    padding: 20px;
+    width: 400px;
+    height: 400px;
+    position: relative;
+  }
+  .total-price-bloc {
+    position: absolute;
+    bottom: 0;
+    border-top: solid;
+    width: 360px;
+    border-color: #34f32e;
+  }
+  .booking-button {
+    margin-top: 80px;
+  }
+  input[type="date"] {
+    border: solid;
+    border-color: #34f32e;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px;
+    padding: 10px;
+  }
+}
+
+.jersey-infos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.infos-item {
+  color: #34f32e !important;
+  border: solid;
+  border-color: #34f32e;
+  background-color: #222;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.description {
+  border: solid;
+  border-color: #34f32e;
+  background-color: #222;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px;
+  color: #ffffff;
+  padding: 20px;
+}
+.stars {
+  color: #34f32e;
+}
