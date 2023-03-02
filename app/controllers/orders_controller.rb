@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: %i[show edit update]
+  before_action :set_order, only: %i[show edit update destroy]
   def index
     @orders = Order.all
   end
@@ -36,6 +36,11 @@ raise
 
   def update
     @order = Order.update(order_params)
+  end
+
+  def destroy
+    @order.destroy
+    redirect_to profil_path, status: :see_other
   end
 
   private
