@@ -9,7 +9,7 @@
 require "open-uri"
 require "nokogiri"
 
-# User seeds
+User seeds
 christophe = User.create(
   email: "idategto11@gmail.com",
   password: "password",
@@ -117,4 +117,18 @@ while i < 100
     p "---------------"
   end
   i += 1
+end
+
+p "Creating orders"
+
+30.times do
+  begin_date = (Date.today - rand(1..30))
+  end_date = begin_date + rand(1..30)
+  order = Order.create(
+    begin_date:,
+    end_date:,
+    user: User.find(rand(1..User.all.count)),
+    jersey: Jersey.find(rand(1..Jersey.all.count)),
+    total_amount: rand(15..23_440)
+  )
 end
