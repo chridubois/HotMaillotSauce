@@ -1,6 +1,21 @@
 <div class="container text-center">
   <div class="title d-flex justify-content-center my-5">
-    <h1>My orders ( <%= current_user.orders.count %> )</h1>
+    <h1>My Profil</h1>
+  </div>
+  <div class="profil-infos d-flex justify-content-between">
+    <div class="avatar">
+      <img src="<%= current_user.avatar %>" alt="">
+    </div>
+    <div class="my_infos">
+    <h3>Mes infos</h3>
+      My address : <%= current_user.seller_address %>
+      My phone number : <%= current_user.phone_number %>
+      My Profit : <%= current_user.seller_address %>
+      My sales : <%= current_user.orders.count %>
+    </div>
+  </div>
+  <div class="title d-flex justify-content-center my-5">
+    <h2>My orders ( <%= current_user.orders.count %> )</h2>
   </div>
   <div class="search_order">
     <%= render 'pages/search_order' %>
