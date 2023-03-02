@@ -1,23 +1,14 @@
 <div class="container mt-3"  >
   <h1>ALL MY JERSEYS ( <%= @jerseys.count %> )</h1>
   <form class="d-flex p-3" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search for a team" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+    <input class="form-control me-2" type="search" placeholder="Search for a team" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
   <div class="container card text-center">
     <% @jerseys[0..20].each do |jersey| %>
-        <div class="maillot card">
-          <div class="card-maillot-infos">
-            <div>
-              <h2><%= jersey.team %></h2>
-              <p><%= jersey.description %> </p>
-            </div>
-            <img src="<%= jersey.photo %>"class="photo maillot" widht="203" height="309"/>
-            <h2 class="maillot-card-price"> <%= jersey.price_per_day %>$ /Day</h2>
-            <%= link_to "Edit", edit_jersey_path(jersey) %>
-            <%= link_to "Delete", jersey_path(jersey), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-          </div>
-        </div>
+      <%= link_to jersey_path(jersey) do %>
+        <%= render 'jerseys/card', jersey: jersey %>
+      <% end %>
     <% end %>
   </div>
 </div>

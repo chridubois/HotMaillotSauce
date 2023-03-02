@@ -45,30 +45,31 @@
             </div>
           </div>
           <div class="booking-form">
-            <form method="POST" action="#">
+            <form method="POST" action="orders/create">
               <div class="date-bloc d-flex justify-content-center mt-5">
-                <div class="begin-date">
+                <div class="begin_date">
                   <input type="date"
-                  id="begin-date"
-                  name="begin-date"
+                  id="begin_date"
+                  name="begin_date"
                   value="2023-03-01"
                   min="2023-03-01"
                   max="2999-12-31"
-                  data-target="price-updater.begin_date">
+                  data-target="price-updater.begin_date"
+                  data-action="change->price-updater#end_date_refresher">
                 </div>
-                <div class="end-date">
+                <div class="end_date">
                   <input type="date"
-                  id="end-date"
-                  name="end-date"
-                  value="2023-03-01"
-                  min="2023-03-01"
+                  id="end_date"
+                  name="end_date"
+                  value="2023-03-02"
+                  min="2023-03-02"
                   max="2999-12-31"
                   data-target="price-updater.end_date"
                   data-action="change->price-updater#total_amount_refresher">
                 </div>
               </div>
               <div class="booking-button d-flex justify-content-center">
-                <input type="button" value="Book Jersey" class="btn btn-outline-success px-5">
+                <input type="submit" value="Book Jersey" class="btn btn-outline-success px-5">
               </div>
             </form>
           </div>

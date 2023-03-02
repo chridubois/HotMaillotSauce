@@ -1,14 +1,13 @@
-<div class="container">
- <div class="wrapper">
-   <div class="banner image">
-   <img src="<%= jersey.photo %>"class="photo maillot" widht="203" height="309"/>
-   </div>
-   <h1><%= jersey.team %></h1>
-   <p><%= jersey.description %></p>
+<div class="banner image">
+  <div id="jerseyyear">
+    <h3><%= jersey.team %>
+    </h3>
+    <%= jersey.year %></div>
+  <img src="<%= jersey.photo %>"class="photo maillot" widht="203" height="309"/>
+  <div id="footcard">
+    <p> <%= jersey.price_per_day %>$ /Day</p>
+    <p><%= jersey.number %>
+      <p>Size :<%= jersey.size %></p>
+    </p>
   </div>
-  <div class="button-wrapper">
-  <button class="btn outline">DETAILS</button>
-    <button class="btn fill">BUY NOW</button>
-  </div>
-    </div>
 </div>
