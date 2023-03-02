@@ -4,28 +4,29 @@
 .jersey-image img {
   width: 550px;
   border-radius: 15px;
-  border: solid;
+  border: solid 5px;
   border-color: #35ee25;
 }
 
 .booking {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 550px;
+  margin-left: 100px;
 
 
   .booking-card {
-    border: solid;
+    border: 3px solid;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.25);
     border-color: #34f32e;
-    background-color: #222;
-    border-radius: 15px;
+    border-radius: 40px 10px;
     box-shadow: 0 2px 4px;
     color: #ffffff;
     padding: 20px;
     width: 400px;
     height: 400px;
     position: relative;
+    margin-top: 50px;
   }
   .total-price-bloc {
     position: absolute;
@@ -46,6 +47,10 @@
   }
 }
 
+.jersey-card {
+  margin-left: 125px;
+}
+
 .jersey-infos {
   display: flex;
   justify-content: space-evenly;
@@ -63,14 +68,22 @@
 }
 
 .description {
-  border: solid;
+  border: 3px solid;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
   border-color: #34f32e;
-  background-color: #222;
-  border-radius: 15px;
+  border-radius: 40px 10px;
   box-shadow: 0 2px 4px;
   color: #ffffff;
   padding: 20px;
+  width: 400px;
+  font-size: 12px;
+  margin-top: 70px;
 }
 .stars {
   color: #34f32e;
+}
+.container.show h1 {
+  font-size: 42px;
 }
