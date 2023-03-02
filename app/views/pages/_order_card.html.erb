@@ -1,0 +1,41 @@
+<div class="order_card d-flex">
+  <div class="jersey_photo">
+    <img src="<%= order.jersey.photo %>" alt="">
+  </div>
+  <div class="infos-order flex-grow-1">
+    <div class="top-infos d-flex justify-content-between">
+      <div class="jersey_title ps-5">
+        Ordered jersey : Maillot <%= "#{order.jersey.team} - #{order.jersey.year}"%>
+      </div>
+      <div class="jersey_total_price">
+        Total Paid : <%= order.total_amount %> $
+      </div>
+    </div>
+    <div class="date-bloc">
+      Location du <%= order.begin_date %> au <%= order.end_date %>
+    </div>
+    <div class="infos-supp">
+      <div class="div">
+        Vendeur
+        <div class="infos-item seller-bloc">
+          <%= order.jersey.user.firstname %> <%= order.jersey.user.lastname %>
+        </div>
+      </div>
+      <div class="div">
+        Address
+        <div class="infos-item seller-address">
+          <%= order.jersey.user.seller_address %>
+        </div>
+      </div>
+      <div class="div">
+        Phone number
+        <div class="infos-item seller-phone-number">
+          <%= order.jersey.user.phone_number %>
+        </div>
+      </div>
+    </div>
+    <div class="cancel_order_button">
+      <%= link_to "Cancel", order_path(order), class: "btn btn-outline-success px-5", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,13 @@
-<%= current_user.email %>
-<%= current_user.orders[0..5].each do  |order|%>
-  <%= link_to jersey_path(jersey) do %>
-    <%= render 'jerseys/card', jersey: jersey %>
-  <% end %>
-<% end %>
+<div class="container text-center">
+  <div class="title d-flex justify-content-center my-5">
+    <h1>My orders ( <%= current_user.orders.count %> )</h1>
+  </div>
+  <div class="search_order">
+    <%= render 'pages/search_order' %>
+  </div>
+  <div class="order_list">
+    <% current_user.orders.each do |order|%>
+      <%= render 'pages/order_card', order: order %>
+    <% end %>
+  </div>
+</div>
