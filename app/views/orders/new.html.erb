@@ -1,0 +1,8 @@
+<!-- test orders create, page à suppr ! -->
+
+<%= simple_form_for ([@jersey, @order]) do |f|%>
+  <%= f.association :user%>
+  <%= f.input :begin_date, as: :date %>
+  <%= f.input :end_date, as: :date %>
+  <%= f.submit %>
+<% end  %>
