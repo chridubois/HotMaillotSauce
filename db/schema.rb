@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_27_163248) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_28_155223) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,10 +23,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_163248) do
     t.string "photo"
     t.integer "number"
     t.float "price_per_day"
-    t.string "seller_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.string "size"
     t.index ["user_id"], name: "index_jerseys_on_user_id"
   end
 
@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_163248) do
     t.bigint "jersey_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "total_amount"
     t.index ["jersey_id"], name: "index_orders_on_jersey_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -54,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_163248) do
     t.string "team"
     t.string "avatar"
     t.string "phone_number"
+    t.string "seller_address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
