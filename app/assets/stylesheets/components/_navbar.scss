@@ -9,10 +9,16 @@
 
   a {
     color:#34f32e;
-  
+
   }
 
   .navbar-nav {
     color: white !important;
+  }
+
+  .navbar-avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
   }
 }
