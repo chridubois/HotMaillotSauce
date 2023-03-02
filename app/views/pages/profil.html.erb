@@ -1,0 +1,6 @@
+<%= current_user.email %>
+<%= current_user.orders[0..5].each do  |order|%>
+  <%= link_to jersey_path(jersey) do %>
+    <%= render 'jerseys/card', jersey: jersey %>
+  <% end %>
+<% end %>
