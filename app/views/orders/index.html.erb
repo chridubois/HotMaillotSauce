@@ -1,12 +1,12 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
-
-<%#    jersey_id récup via :
-
-<input type="button" value="Book Jersey" class="btn btn-outline-success px-5"> %>
-
-<%#  ==> faire le link_to correspondant %>
-
-j'ai une liste de jersey_id dans ma db, asso à mon @order
-pour chacune:
-    j'affiche la carte
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Unbounded:wght@900&display=swap');
+</style>
+<div class="container mt-3"  >
+  <h1>ALL MY ORDERS <% @orders.count %> </h1>
+<div id="orders">
+  <% @orders.each do |order| %>
+    <p>
+      <%= link_to "", jerseys %>
+    </p>
+  <% end %>
+</div>

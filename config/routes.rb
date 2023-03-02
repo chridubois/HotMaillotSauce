@@ -3,14 +3,11 @@ Rails.application.routes.draw do
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-
-  resources 'jerseys', only: %i[index new create edit update destroy show] do
-    #test orders create: new à suppr !!!
-    resources 'orders', only: %i[new create]
+  resources :jerseys, only: %i[index new create edit update destroy show] do
+    resources :orders, only: [:create]
   end
-
   get '/shop' => 'jerseys#shop'
-
-  resources 'orders', only: %i[update destroy index show]
-
+  get "/profil", to: "pages#profil"
+  get '/no_results' => 'jerseys#no_results'
+  resources :orders, only: %i[update destroy show index]
 end
