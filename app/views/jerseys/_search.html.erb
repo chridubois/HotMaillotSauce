@@ -1,6 +1,8 @@
-<div class="search">
-    <form class="d-flex p-3" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search for a team" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
+<%= form_with url: jerseys_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search for a team or a player"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
