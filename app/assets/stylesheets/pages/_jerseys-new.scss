@@ -3,14 +3,17 @@
 
 // background-color vert fluo: #35ee25;
 // autre vert #1cc87c
-.form {
+.partial-form {
   color: #1cc87c;
   font-weight: bold;
-  margin-top: 8%;
+  margin-top: 2%;
   padding: 4%;
-  border: 3px solid #34F32E;
-  border-radius: 16px;
-  background-color: #431B54;
+  border: 3px solid;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
+  border-color: #34f32e;
+  border-radius: 40px 10px;
   .title{
     margin-bottom: 4%;
     color: #34F32E;
@@ -29,4 +32,8 @@
 .partial-btn-submit{
   display: flex;
   justify-content: center;
+}
+
+.form.container h1 {
+  font-size: 42px;
 }
