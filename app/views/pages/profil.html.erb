@@ -21,7 +21,7 @@
     <%= render 'pages/search_order' %>
   </div>
   <div class="order_list">
-    <% current_user.orders.each do |order|%>
+    <% current_user.orders.order(id: :desc).each do |order|%>
       <%= render 'pages/order_card', order: order %>
     <% end %>
   </div>

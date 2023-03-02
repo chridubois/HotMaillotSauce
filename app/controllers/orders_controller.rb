@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
     @order.total_amount = params[:total_amount]
 
     if @order.save
-      redirect_to profile_path(@order)
+      redirect_to profil_path(@order)
     else
       alert
     end
