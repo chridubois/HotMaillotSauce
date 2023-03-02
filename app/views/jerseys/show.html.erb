@@ -44,8 +44,10 @@
               <i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i><i class="fa-regular fa-futbol"></i> (5)
             </div>
           </div>
+
+
           <div class="booking-form">
-            <form method="POST" action="orders/create">
+            <form method="POST" action="<%= orders_path %>">
               <div class="date-bloc d-flex justify-content-center mt-5">
                 <div class="begin_date">
                   <input type="date"
@@ -66,6 +68,10 @@
                   max="2999-12-31"
                   data-target="price-updater.end_date"
                   data-action="change->price-updater#total_amount_refresher">
+                </div>
+                <div> <input id="jerseyID" name="jerseyID" type="hidden" value="<%= @jersey.id %>">
+                </div>
+                <div> <input id="total_amount" name="total_amount" type="hidden" value="150" data-target="price-updater.total_amount_input">
                 </div>
               </div>
               <div class="booking-button d-flex justify-content-center">
