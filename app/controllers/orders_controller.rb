@@ -7,29 +7,25 @@ class OrdersController < ApplicationController
   def show
   end
 
-
-# test create: action new à suppr !!!
-def new
-  @jersey = Jersey.find(params[:jersey_id])
-  @order = Order.new
-end
-
-
   def create
-    @order = Order.new(order_params)
-    @jersey = Jersey.find(params[:jersey_id])
-    @order.jersey = @jersey
-    @user = current_user.id
-    @order.user_id = @user
+    @order = Order.new
+    @order.user_id = current_user.id
 
-    @order.total_amount
-raise
+    @jersey_id = params[:jerseyID].to_i
+    @order.jersey_id = @jersey_id
+
+    @order.begin_date = params[:begin_date]
+    @order.end_date = params[:end_date]
+
+    @order.total_amount = params[:total_amount]
+
     if @order.save
-      redirect_to orders_path(@order)
+      redirect_to profile_path(@order)
     else
       alert
     end
   end
+
 
   def edit
   end
