@@ -2,10 +2,10 @@
   @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Unbounded:wght@900&display=swap');
 </style>
 <div class="container mt-3"  >
-  <h1>ALL OUR JERSEYS ( <%= @jerseys.count %> )</h1>
+  <h1>ALL OUR JERSEYS <% @jerseys.count %> </h1>
   <%= render 'jerseys/search'%>
   <div class="container card">
-    <% @jerseys[0..20].each do |jersey| %>
+    <% @jerseys[0..5].each do |jersey| %>
       <%= link_to jersey_path(jersey) do %>
         <%= render 'jerseys/card', jersey: jersey %>
       <% end %>

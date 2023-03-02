@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:create]
   end
   get '/shop' => 'jerseys#shop'
+
+  get "/profil", to: "pages#profil"
   resources :orders, only: %i[update destroy show index]
 end
