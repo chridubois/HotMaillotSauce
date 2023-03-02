@@ -1,25 +1,14 @@
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Unbounded:wght@900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Unbounded:wght@900&display=swap');
 </style>
-
 <div class="container mt-3"  >
-
   <h1>ALL OUR JERSEYS ( <%= @jerseys.count %> )</h1>
-
-
-    <div class="search">
-      <form class="d-flex p-3" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search for a team" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-
-    <div class="container card">
-        <% @jerseys[0..20].each do |jersey| %>
-          <%= link_to jersey_path(jersey) do %>
-          <%= render 'jerseys/card', jersey: jersey %>
-          <% end %>
-        <% end %>
-    </div>
-
+  <%= render 'jerseys/search'%>
+  <div class="container card">
+    <% @jerseys[0..20].each do |jersey| %>
+      <%= link_to jersey_path(jersey) do %>
+        <%= render 'jerseys/card', jersey: jersey %>
+      <% end %>
+    <% end %>
+  </div>
 </div>

@@ -6,7 +6,9 @@
   </form>
   <div class="container card text-center">
     <% @jerseys[0..20].each do |jersey| %>
-      <%= render 'jerseys/card', jersey: jersey %>
+      <%= link_to jersey_path(jersey) do %>
+        <%= render 'jerseys/card', jersey: jersey %>
+      <% end %>
     <% end %>
   </div>
 </div>
