@@ -9,7 +9,7 @@
 require "open-uri"
 require "nokogiri"
 
-User seeds
+# User seeds
 christophe = User.create(
   email: "idategto11@gmail.com",
   password: "password",

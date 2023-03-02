@@ -6,8 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" style="position: relative" id="navbarNavDropdown">
         <% if current_user.nil? %>
-        <ul class="navbar-nav" style="    position: absolute;
-    right: 0px;">
+        <ul class="navbar-nav" style="position: absolute;right: 0px;">
           <li class="nav-item">
             <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %>
           </li>
@@ -26,6 +25,9 @@
           <li class="nav-item" style="position: absolute; right: 0px;">
             <%= link_to "Log Out", destroy_user_session_path, method: "delete", class:"nav-link" %>
           </li>
+          <% if current_user.avatar.present? %>
+            <%= image_tag(current_user.avatar, class:"navbar-avatar") %>
+          <% end %>
         </ul>
       <% end %>
     </div>
