@@ -20,9 +20,16 @@ class JerseysController < ApplicationController
     if params[:query].present?
       sql_query = "team ILIKE :query OR player ILIKE :query"
       @jerseys = Jersey.where(sql_query, query: "%#{params[:query]}%")
+      if @jerseys.count.zero?
+        redirect_to no_results_path
+      end
     else
       @jerseys = Jersey.order(id: :desc)
     end
+  end
+
+  def no_results
+
   end
 
   def shop

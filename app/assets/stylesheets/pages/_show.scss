@@ -14,10 +14,12 @@
 
 
   .booking-card {
-    border: solid;
+    border: 3px solid;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.25);
     border-color: #34f32e;
-    background-color: #222;
-    border-radius: 15px;
+    border-radius: 40px 10px;
     box-shadow: 0 2px 4px;
     color: #ffffff;
     padding: 20px;
@@ -66,10 +68,12 @@
 }
 
 .description {
-  border: solid;
+  border: 3px solid;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
   border-color: #34f32e;
-  background-color: #222;
-  border-radius: 15px;
+  border-radius: 40px 10px;
   box-shadow: 0 2px 4px;
   color: #ffffff;
   padding: 20px;
@@ -79,4 +83,7 @@
 }
 .stars {
   color: #34f32e;
+}
+.container.show h1 {
+  font-size: 42px;
 }

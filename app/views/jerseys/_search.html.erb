@@ -1,8 +1,8 @@
-<%= form_with url: jerseys_path, method: :get, class: "d-flex" do %>
+<%= form_with url: jerseys_path, method: :get, class: "search-form d-flex my-5" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Search for a team or a player"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Search", class: "btn btn-outline-success px-5" %>
 <% end %>
