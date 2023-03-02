@@ -1,0 +1,12 @@
+// Import page-specific CSS files here.
+@import "home";
+
+.my_infos {
+  border: 3px solid;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
+  border-color: #34f32e;
+  border-radius: 40px 10px;
+  color: white;
+}
