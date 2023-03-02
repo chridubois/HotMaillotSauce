@@ -17,7 +17,12 @@ class JerseysController < ApplicationController
   end
 
   def index
-    @jerseys = Jersey.order(id: :desc)
+    if params[:query].present?
+      sql_query = "team ILIKE :query OR player ILIKE :query"
+      @jerseys = Jersey.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @jerseys = Jersey.order(id: :desc)
+    end
   end
 
   def shop
