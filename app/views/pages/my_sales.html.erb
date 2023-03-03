@@ -1,0 +1,11 @@
+<div class="title d-flex justify-content-center my-5">
+  <h1>My Sales</h1>
+</div>
+<div class="order_list">
+  <% current_user.jerseys.each do |jersey| %>
+    <% jersey.orders.each do |order| %>
+      <%= render 'pages/order_card', order: order %>
+    <% end %>
+  <% end %>
+
+</div>
