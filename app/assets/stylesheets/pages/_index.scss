@@ -28,6 +28,11 @@
   filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
   display: flex;
   flex-direction: column;
+  transition: transform .1s;
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+  }
 }
 
 .photo.maillot{
