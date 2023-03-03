@@ -3,10 +3,11 @@
 </style>
 <div class="container mt-3"  >
   <h1>ALL MY ORDERS <% @orders.count %> </h1>
-<div id="orders">
-  <% @orders.each do |order| %>
-    <p>
-      <%= link_to "", jerseys %>
-    </p>
-  <% end %>
-</div>
+  <div class="search_order">
+    <%= render 'pages/search_order' %>
+  </div>
+  <div class="order_list">
+    <% current_user.orders.order(id: :desc).each do |order|%>
+      <%= render 'pages/order_card', order: order %>
+    <% end %>
+  </div>
