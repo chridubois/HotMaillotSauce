@@ -10,4 +10,21 @@
   border-radius: 40px 10px;
   color: white;
   width: 400px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.profil-avatar {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+.names h2 {
+  color: white;
+}
+.orders-title h2 {
+  color: white !important;
+}
+.my_infos .user-item {
+  justify-self: start;
+  padding: 10px;
 }

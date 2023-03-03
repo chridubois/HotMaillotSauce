@@ -4,6 +4,10 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def my_basket
+    @orders = current_user.orders
+  end
+
   def show
   end
 

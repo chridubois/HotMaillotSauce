@@ -3,19 +3,31 @@
     <h1>My Profil</h1>
   </div>
   <div class="profil-infos d-flex justify-content-between">
-    <div class="avatar">
-      <img src="<%= current_user.avatar %>" alt="">
+    <div class="avatar_profil">
+      <div class="names">
+        <h2>
+          <%= current_user.firstname %>
+          <%= current_user.lastname %>
+        </h2>
+      </div>
+      <% if current_user.avatar.present? %>
+        <%= image_tag(current_user.avatar, class:"profil-avatar") %>
+      <% end %>
     </div>
-    <div class="my_infos">
-    <h3>Mes infos</h3>
-      My address : <%= current_user.seller_address %>
-      My phone number : <%= current_user.phone_number %>
-      My Profit : <%= current_user.jersey.orders %>
-      My sales : <%= current_user.orders.count %>
+    <div class="my_infos pb-3">
+      <h3>Mes infos</h3>
+      <div class="user-item address">My address : <%= current_user.seller_address %></div>
+      <div class="user-item phone">My phone number : <%= current_user.phone_number %></div>
+      <div class="user-item profit">My Profit : <%= current_user.my_profit %>$</div>
+      <div class="user-item sales">Current Jerseys rent : <%= current_user.orders.count %></div>
+      <div class="user-item shop">Jerseys in my shop : <%= current_user.jerseys.count %></div>
+      <div class="edit_order_button">
+      <%= link_to "Edit", edit_user_registration_path(current_user), class: "btn btn-outline-success px-5" %>
+    </div>
     </div>
   </div>
-  <div class="title d-flex justify-content-center my-5">
-    <h2>My orders ( <%= current_user.orders.count %> )</h2>
+  <div class="orders-title d-flex justify-content-center my-5">
+    <h2>Current Jerseys rent ( <%= current_user.orders.count %> )</h2>
   </div>
   <div class="search_order">
     <%= render 'pages/search_order' %>
