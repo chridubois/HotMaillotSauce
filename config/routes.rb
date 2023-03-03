@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   get '/shop' => 'jerseys#shop'
   get "/profil", to: "pages#profil"
   get '/no_results' => 'jerseys#no_results'
+  get '/my_basket' => 'orders#my_basket'
+  get '/my_sales' => 'pages#my_sales'
   resources :orders, only: %i[create update destroy show index]
 end
