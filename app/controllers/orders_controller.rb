@@ -43,6 +43,10 @@ class OrdersController < ApplicationController
     redirect_to profil_path, status: :see_other
   end
 
+  def my_basket
+    @orders = current_user.orders
+  end
+
   private
 
   def set_order

@@ -17,17 +17,33 @@
         <% else %>
         <ul class="navbar-nav">
           <li class="nav-item">
+            <%= link_to "My Shop", jerseys_path, class:"nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "My Sales", my_sales_path, class:"nav-link" %>
+          </li>
+
+          <li class="nav-item">
             <%= link_to "Add Jersey", new_jersey_path, class:"nav-link" %>
           </li>
+
           <li class="nav-item">
+            <%= link_to "My Basket", my_basket_path, class:"nav-link" %>
+          </li>
+        </ul>
+        <ul >
+          <li class="nav-item" style="position: absolute; right: 46px; bottom: 3px;">
+              <%= link_to "Log Out", destroy_user_session_path, method: "delete", class:"nav-link" %>
+          </li>
+
+          <li class="nav-item" style="position: absolute; right: 122px; bottom: 3px;">
             <%= link_to "My Profil", profil_path, class:"nav-link" %>
           </li>
-          <li class="nav-item" style="position: absolute; right: 0px;">
-            <%= link_to "Log Out", destroy_user_session_path, method: "delete", class:"nav-link" %>
-          </li>
-          <% if current_user.avatar.present? %>
-            <%= image_tag(current_user.avatar, class:"navbar-avatar") %>
-          <% end %>
+
+            <% if current_user.avatar.present? %>
+                  <li class="nav-item" style="position: absolute; right: 0px; bottom: 2px;"> <%= image_tag(current_user.avatar, class:"navbar-avatar") %></li>
+            <% end %>
         </ul>
       <% end %>
     </div>
