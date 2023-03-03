@@ -1,5 +1,7 @@
 <div class="container mt-3"  >
-  <h1>ALL MY JERSEYS ( <%= @jerseys.count %> )</h1>
+  <div class="title d-flex justify-content-center my-5">
+    <h1>MY SHOP (<%= @jerseys.count %> )</h1>
+  </div>
   <%= render 'jerseys/search'%>
   <div class="container card text-center">
     <% @jerseys[0..20].each do |jersey| %>

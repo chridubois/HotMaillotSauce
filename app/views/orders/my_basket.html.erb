@@ -1,0 +1,8 @@
+<div class="title d-flex justify-content-center my-5">
+  <h1>Current Jerseys rent ( <%= current_user.orders.count %> )</h1>
+</div>
+<div class="order_list">
+  <% current_user.orders.order(id: :desc).each do |order|%>
+    <%= render 'pages/order_card', order: order %>
+  <% end %>
+</div>
