@@ -9,6 +9,10 @@
 require "open-uri"
 require "nokogiri"
 
+Order.destroy_all
+Jersey.destroy_all
+User.destroy_all
+
 # User seeds
 christophe = User.create(
   email: "idategto11@gmail.com",
@@ -59,7 +63,7 @@ user_count = User.all.count
 
 i = 1
 
-while i < 100
+while i < 30
 
   url = "https://www.vintagefootballarea.com/collections/tous-les-maillots?page=#{i}"
 
@@ -109,7 +113,7 @@ while i < 100
       size:,
       player:,
       number:,
-      user: User.find(rand(1..user_count)),
+      user: User.find(rand(User.first.id..User.last.id)),
       state:,
       description:
     )
@@ -127,8 +131,8 @@ p "Creating orders"
   order = Order.create(
     begin_date:,
     end_date:,
-    user: User.find(rand(1..User.all.count)),
-    jersey: Jersey.find(rand(1..Jersey.all.count)),
+    user: User.find(rand(User.first.id..User.last.id)),
+    jersey: Jersey.find(rand(Jersey.first.id..Jersey.last.id)),
     total_amount: rand(15..23_440)
   )
 end
