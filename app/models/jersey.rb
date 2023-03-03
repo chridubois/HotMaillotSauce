@@ -5,4 +5,5 @@ class Jersey < ApplicationRecord
 
   validates :team, :year, :state, :photo, :price_per_day, :user, :size, presence: true
   validates :price_per_day, numericality: { greater_than: 0 }
+
 end

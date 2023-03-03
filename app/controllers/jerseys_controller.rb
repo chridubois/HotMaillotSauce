@@ -29,21 +29,22 @@ class JerseysController < ApplicationController
   end
 
   def no_results
-
   end
 
   def shop
     @jerseys = Jersey.where(user_id: current_user.id)
   end
 
-  # def search
-  # end
-
   def edit
   end
 
   def show
     @order = Order.new
+    @marker =
+      {
+        lat: @jersey.user.latitude,
+        lng: @jersey.user.longitude
+      }
   end
 
   def update

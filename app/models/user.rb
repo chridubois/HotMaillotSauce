@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   validates :email, :firstname, :lastname, :password, :team, :phone_number, :seller_address, presence: true
 
+  geocoded_by :seller_address
+  after_validation :geocode, if: :will_save_change_to_seller_address?
+
   def my_profit
     @my_profit = 0
     jerseys.each do |jersey|
