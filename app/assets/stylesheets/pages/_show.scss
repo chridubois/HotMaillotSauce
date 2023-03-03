@@ -87,3 +87,14 @@
 .container.show h1 {
   font-size: 42px;
 }
+.mapboxgl-map{
+  overflow: visible !important;
+  padding: 10px;
+  display:block;
+}
+.map-show {
+  border-color: #34f32e !important;
+  // border-radius: 40px 10px;
+  box-shadow: 0 2px 4px;
+  border: 5px solid;
+}
